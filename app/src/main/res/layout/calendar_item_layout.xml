@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            app:cardElevation="4dp"
+            app:rippleColor="#567CED"
+            app:cardBackgroundColor="@color/selector_card_view_colors"
+            android:focusable="true"
+            android:transitionName="@{@string/email_card_transition_name(calendar.id)}"
+            app:cardCornerRadius="8dp"
+            app:cardPreventCornerOverlap="false"
+            app:checkedIcon="@drawable/ic_check_icon"
+            app:checkedIconTint="#ffffff"
+            android:layout_margin="4dp"
+            app:contentPadding="@dimen/dimen_16dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/sender_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:maxLines="1"
+                    android:textColor="@color/selector_text_view_colors"
+                    android:text="@{String.valueOf(calendar.id)}"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Google Express - 12m"
+                    />
+
+                <TextView
+                    android:id="@+id/subject_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:maxLines="1"
+                    android:textColor="@color/selector_text_view_colors"
+                    android:text="@{calendar.subject}"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sender_text_view"
+                    app:layout_goneMarginEnd="@dimen/dimen_8dp"
+                    tools:text="Package Shipped!"
+                    />
+
+                <TextView
+                    android:id="@+id/body_preview_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:maxLines="2"
+                    android:textColor="@color/selector_text_view_colors"
+                    android:text="@{calendar.body}"
+                    android:textAppearance="?attr/textAppearanceBody1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/subject_text_view"
+                    tools:text="Cucumber mask facial has shipped. It'll be on your front door by the end of the week!"
+                    />
+
+                <!--            <androidx.recyclerview.widget.RecyclerView-->
+                <!--                android:id="@+id/attachment_recycler_view"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="96dp"-->
+                <!--                android:layout_marginTop="@dimen/dimen_16dp"-->
+                <!--                app:layout_constraintStart_toStartOf="parent"-->
+                <!--                app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                app:layout_constraintTop_toBottomOf="@id/body_preview_text_view"-->
+                <!--                android:paddingStart="12dp"-->
+                <!--                android:paddingEnd="12dp"-->
+                <!--                android:clipToPadding="false"-->
+                <!--                android:overScrollMode="never"-->
+                <!--                app:goneIf="@{!email.hasAttachments}"-->
+                <!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+                <!--                android:orientation="horizontal" />-->
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    <data>
+        <variable
+            name="calendar"
+            type="com.example.daynightthem.nav.datasource.model.NoteInfo.Calendar"
+            />
+    </data>
+</layout>

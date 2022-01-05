@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+
+    <!--search view anim-->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/searchCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="56dp"
+            android:alpha="1"
+            android:elevation="@dimen/dimen_4dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="@dimen/dimen_24dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/horizontal_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchCardView" />
+
+
+        <!--            <Constraint-->
+        <!--                android:id="@+id/toolBarLayoutCard"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginEnd="24dp"-->
+        <!--                android:layout_marginStart="24dp"-->
+        <!--                app:contentPaddingTop="44dp"-->
+        <!--                android:alpha="0"-->
+        <!--                android:elevation="@dimen/dimen_4dp"-->
+        <!--                motion:layout_constraintEnd_toEndOf="parent"-->
+        <!--                motion:layout_constraintStart_toStartOf="parent"-->
+        <!--                motion:layout_constraintTop_toTopOf="parent">-->
+        <!--                <CustomAttribute-->
+        <!--                    motion:attributeName="radius"-->
+        <!--                    motion:customDimension="@dimen/dimen_24dp" />-->
+        <!--            </Constraint>-->
+
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:id="@+id/searchCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="56dp"
+            android:alpha="0"
+            android:elevation="@dimen/dimen_4dp"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:translationY="-400dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="@dimen/dimen_24dp" />
+        </Constraint>
+
+        <Constraint
+            android:id="@+id/horizontal_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:alpha="0"
+            android:scaleX="0.5"
+            android:scaleY="0.5"
+            android:translationY="-400dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchCardView" />
+
+
+
+        <!--            <Constraint-->
+        <!--                android:id="@+id/toolBarLayoutCard"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginEnd="0dp"-->
+        <!--                android:layout_marginStart="0dp"-->
+        <!--                app:contentPaddingTop="44dp"-->
+        <!--                android:alpha="1"-->
+        <!--                android:elevation="0dp"-->
+        <!--                motion:layout_constraintEnd_toEndOf="parent"-->
+        <!--                motion:layout_constraintStart_toStartOf="parent"-->
+        <!--                motion:layout_constraintTop_toTopOf="parent">-->
+
+        <!--                <CustomAttribute-->
+        <!--                    motion:attributeName="radius"-->
+        <!--                    motion:customDimension="0dp" />-->
+        <!--            </Constraint>-->
+
+
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="300"
+        motion:layoutDuringTransition="honorRequest" />
+    <!--search view anim end-->
+
+
+    <!--    <ConstraintSet android:id="@+id/cardStart">-->
+    <!--        <Constraint-->
+    <!--            android:id="@+id/searchCardView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="44dp"-->
+    <!--            android:layout_marginStart="@dimen/dimen_24dp"-->
+    <!--            android:layout_marginEnd="@dimen/dimen_24dp"-->
+    <!--            android:alpha="1"-->
+    <!--            android:padding="@dimen/dimen_16dp"-->
+    <!--            motion:layout_constraintEnd_toEndOf="parent"-->
+    <!--            motion:layout_constraintStart_toStartOf="parent"-->
+    <!--            motion:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            <CustomAttribute-->
+    <!--                motion:attributeName="radius"-->
+    <!--                motion:customDimension="@dimen/dimen_24dp" />-->
+    <!--        </Constraint>-->
+
+
+    <!--    </ConstraintSet>-->
+
+    <!--    <ConstraintSet android:id="@+id/cardEnd">-->
+    <!--        <Constraint-->
+    <!--            android:id="@+id/searchCardView"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="0dp"-->
+    <!--            android:layout_marginStart="100dp"-->
+    <!--            android:layout_marginEnd="100dp"-->
+    <!--            android:alpha="0"-->
+    <!--            android:padding="@dimen/dimen_16dp"-->
+    <!--            motion:layout_constraintEnd_toEndOf="parent"-->
+    <!--            motion:layout_constraintStart_toStartOf="parent"-->
+    <!--            motion:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            <CustomAttribute-->
+    <!--                motion:attributeName="radius"-->
+    <!--                motion:customDimension="@dimen/dimen_24dp" />-->
+    <!--        </Constraint>-->
+
+
+    <!--    </ConstraintSet>-->
+
+    <!--    <Transition-->
+    <!--        motion:constraintSetEnd="@+id/cardEnd"-->
+    <!--        motion:constraintSetStart="@+id/cardStart"-->
+    <!--        app:duration="2000"-->
+
+    <!--        >-->
+    <!--        <OnSwipe-->
+    <!--            app:dragDirection="dragUp"-->
+    <!--            app:touchAnchorId="@id/recycler_view"-->
+    <!--            app:touchAnchorSide="top" />-->
+    <!--    </Transition>-->
+</MotionScene>

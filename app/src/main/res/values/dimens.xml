@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="bottom_app_bar_height">56dp</dimen>
+    <dimen name="email_sender_profile_image_size">42dp</dimen>
+
+    <dimen name="reply_small_component_corner_radius">24dp</dimen>
+    <dimen name="reply_medium_component_corner_radius">0dp</dimen>
+    <dimen name="reply_large_component_corner_radius">12dp</dimen>
+
+</resources>
