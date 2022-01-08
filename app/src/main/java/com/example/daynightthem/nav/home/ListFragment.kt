@@ -19,12 +19,12 @@ import com.example.daynightthem.R
 import com.example.daynightthem.R.integer
 import com.example.daynightthem.R.string
 import com.example.daynightthem.databinding.FragmentListBinding
+import com.example.daynightthem.nav.datasource.NoteStore
 import com.example.daynightthem.nav.datasource.model.NoteInfo
 import com.example.daynightthem.nav.datasource.model.NoteInfo.Calendar
 import com.example.daynightthem.nav.datasource.model.NoteInfo.Note
 import com.example.daynightthem.nav.datasource.model.NoteInfo.Reminder
 import com.example.daynightthem.nav.datasource.model.NoteInfo.TodoData
-import com.example.daynightthem.nav.datasource.NoteStore
 import com.example.daynightthem.nav.home.adapter.MyNoteAdapter
 import com.example.daynightthem.nav.home.adapter.MyRecyclerViewAnimator
 import com.google.android.material.transition.MaterialElevationScale
