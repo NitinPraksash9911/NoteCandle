@@ -82,12 +82,10 @@ class MyNoteAdapter(private val onItemClick: (view: CardView, email: NoteInfo?) 
         }
     }
 
-//    override fun getItemId(position: Int): Long = position.toLong()
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
 
         val noteData = getItem(position)
-//        tracker?.let { holder.bind(noteData, it.isSelected(position.toLong())) }
 
         holder.bind(noteData)
     }
@@ -200,14 +198,5 @@ class MyNoteAdapter(private val onItemClick: (view: CardView, email: NoteInfo?) 
 }
 
 abstract class BaseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//    abstract fun bind(item: NoteInfo, isActivated: Boolean = false)
     abstract fun bind(item: NoteInfo)
-//    abstract fun getItemDetails(): ItemDetailsLookup.ItemDetails<Long>
-
-
-//    companion object {
-//        inline fun <reified T : BaseViewHolder> create(f: () -> T): T {
-//            return f()
-//        }
-//    }
 }

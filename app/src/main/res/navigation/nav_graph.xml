@@ -24,9 +24,9 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/emailFragment"
-        android:name="com.example.daynightthem.nav.email.EmailFragment"
+        android:name="com.example.daynightthem.nav.note.NoteDetailFragment"
         android:label="fragment_email"
-        tools:layout="@layout/fragment_email" >
+        tools:layout="@layout/fragment_note_detail" >
         <argument
             android:name="noteId"
             app:argType="long" />

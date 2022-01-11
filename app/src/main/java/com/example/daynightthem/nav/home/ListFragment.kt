@@ -41,7 +41,6 @@ class ListFragment : Fragment() {
 
     lateinit var emailAdapter: MyNoteAdapter
 
-    private var isItemSelected = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,11 +73,6 @@ class ListFragment : Fragment() {
 
         initEmailRecyclerView()
 
-        if (savedInstanceState != null) {
-            tracker?.onRestoreInstanceState(savedInstanceState)
-            binding.motionLayout.progress = savedInstanceState.getFloat("currentState")
-            binding.selectedCount.text = tracker?.selection?.size().toString()
-        }
 
         binding.searchCardView.setOnClickListener {
 
@@ -187,49 +181,13 @@ class ListFragment : Fragment() {
             emailAdapter.submitList(it)
         }
 
-//        tracker = SelectionTracker.Builder<Long>(
-//            "mySelection",
-//            binding.recyclerView,
-//            MyItemKeyProvider(binding.recyclerView),
-//            MyItemDetailsLookup(binding.recyclerView),
-//            StorageStrategy.createLongStorage()
-//        ).withSelectionPredicate(
-//            SelectionPredicates.createSelectAnything()
-//        ).build()
-
-//        emailAdapter.tracker = tracker
-//
-//        tracker?.addObserver(
-//            object : SelectionTracker.SelectionObserver<Long>() {
-//                override fun onSelectionChanged() {
-//                    super.onSelectionChanged()
-//                    val items = tracker?.selection!!.size()
-//                    isItemSelected = items > 0
-//
-//                    if (isItemSelected) {
-//
-//                        binding.selectedCount.text = items.toString()
-//                        Toast.makeText(requireContext(), "$items", Toast.LENGTH_LONG).show()
-//                    }
-//
-//                    if (isItemSelected && items == 1) {
-////                        binding.motionLayout.transitionToEnd()
-//
-//                    } else if (items == 0 && isItemSelected.not()) {
-////                        binding.motionLayout.transitionToStart()
-//
-//                    }
-//
-//                }
-//
-//            })
 
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        tracker?.onSaveInstanceState(outState)
-        outState.putFloat("currentState", binding.motionLayout.progress)
+//        tracker?.onSaveInstanceState(outState)
+//        outState.putFloat("currentState", binding.motionLayout.progress)
     }
 
     fun hide() {

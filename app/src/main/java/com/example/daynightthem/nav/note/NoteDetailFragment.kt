@@ -1,4 +1,4 @@
-package com.example.daynightthem.nav.email
+package com.example.daynightthem.nav.note
 
 import android.graphics.Color
 import android.os.Bundle
@@ -9,16 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.daynightthem.R
-import com.example.daynightthem.databinding.FragmentEmailBinding
-import com.example.daynightthem.nav.datasource.EmailStore
+import com.example.daynightthem.databinding.FragmentNoteDetailBinding
+import com.example.daynightthem.nav.datasource.NoteStore
+import com.example.daynightthem.nav.datasource.model.NoteInfo.Note
 import com.example.daynightthem.util.themeColor
 import com.google.android.material.transition.MaterialContainerTransform
 import kotlin.LazyThreadSafetyMode.NONE
 
-class EmailFragment : Fragment() {
+class NoteDetailFragment : Fragment() {
 
-    lateinit var binding: FragmentEmailBinding
-    private val args: EmailFragmentArgs by navArgs()
+    lateinit var binding: FragmentNoteDetailBinding
+    private val args: NoteDetailFragmentArgs by navArgs()
 
     private val noteId: Long by lazy(NONE) { args.noteId }
 
@@ -40,7 +41,7 @@ class EmailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentEmailBinding.inflate(inflater, container, false)
+        binding = FragmentNoteDetailBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -52,14 +53,14 @@ class EmailFragment : Fragment() {
             findNavController().navigateUp()
         }
 
-        val email = EmailStore.get(noteId)
-        if (email == null) {
+        val note = NoteStore.get(noteId)
+        if (note == null) {
             showError()
             return
         }
 
         binding.run {
-            this.email = email
+            this.note = note as Note?
 
         }
     }

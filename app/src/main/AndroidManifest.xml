@@ -14,8 +14,9 @@
 
 
         </activity>
-        <activity android:name=".nav.NavActivity">
-
+        <activity android:name=".nav.NavActivity"
+            android:exported="true"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

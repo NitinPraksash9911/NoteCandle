@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DayTheme</string>
+    <string name="app_name">Note App</string>
     <string name="theme_title">Themes:</string>
     <string name="light_theme">Dark theme</string>
     <string name="dark_theme">Light theme</string>

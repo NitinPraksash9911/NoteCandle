@@ -14,7 +14,7 @@
             app:rippleColor="#567CED"
             app:cardBackgroundColor="@color/selector_card_view_colors"
             android:focusable="true"
-            android:transitionName="@{@string/email_card_transition_name(email.id)}"
+            android:transitionName="@{@string/email_card_transition_name(note.id)}"
             app:cardCornerRadius="8dp"
             app:cardPreventCornerOverlap="false"
             app:checkedIcon="@drawable/ic_check_icon"
@@ -35,7 +35,7 @@
                     android:layout_marginTop="@dimen/dimen_8dp"
                     android:maxLines="1"
                     android:textColor="@color/selector_text_view_colors"
-                    android:text="@{String.valueOf(email.id)}"
+                    android:text="@{String.valueOf(note.id)}"
                     android:textAppearance="?attr/textAppearanceBody2"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -49,7 +49,7 @@
                     android:layout_marginTop="@dimen/dimen_8dp"
                     android:maxLines="1"
                     android:textColor="@color/selector_text_view_colors"
-                    android:text="@{email.subject}"
+                    android:text="@{note.subject}"
                     android:textAppearance="?attr/textAppearanceHeadline5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sender_text_view"
@@ -64,7 +64,7 @@
                     android:layout_marginTop="@dimen/dimen_8dp"
                     android:maxLines="2"
                     android:textColor="@color/selector_text_view_colors"
-                    android:text="@{email.body}"
+                    android:text="@{note.body}"
                     android:textAppearance="?attr/textAppearanceBody1"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -96,8 +96,8 @@
 
     <data>
         <variable
-            name="email"
-            type="com.example.daynightthem.nav.datasource.Email"
+            name="note"
+            type="com.example.daynightthem.nav.datasource.model.NoteInfo.Note"
             />
     </data>
 </layout>

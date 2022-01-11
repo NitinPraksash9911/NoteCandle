@@ -13,10 +13,8 @@
 
 
         <androidx.constraintlayout.motion.widget.MotionLayout
-
             android:id="@+id/motionLayout"
             android:layout_width="match_parent"
-
             android:layout_height="match_parent"
             android:background="?attr/colorSurface"
             app:layoutDescription="@xml/activity_motion_test_scene"
@@ -24,7 +22,6 @@
 
 
             <!--recyclerview-->
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
@@ -41,7 +38,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:spanCount="2"
-                tools:listitem="@layout/email_item_layout"
+                tools:listitem="@layout/note_item_layout"
                 />
 
 
@@ -77,7 +74,7 @@
                         android:background="?attr/actionBarItemBackground"
                         android:contentDescription="@string/navigate_back_icon_content_desc"
                         android:padding="@dimen/dimen_16dp"
-                        android:tint="@color/cardview_dark_background"
+                        app:tint="@color/cardview_dark_background"
                         app:srcCompat="@drawable/ic_search"
                         />
                     <TextView
@@ -91,82 +88,6 @@
                         android:textSize="18sp"
                         />
 
-                </LinearLayout>
-
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!--selection toolbar-->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/toolBarLayoutCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="24dp"
-                android:layout_marginStart="24dp"
-                android:visibility="gone"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="@dimen/dimen_4dp"
-                app:contentPaddingTop="44dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                >
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    >
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal"
-                        >
-
-                        <ImageButton
-                            android:id="@+id/navigation_icon1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/actionBarItemBackground"
-                            android:contentDescription="@string/navigate_back_icon_content_desc"
-                            android:padding="@dimen/dimen_16dp"
-                            android:tint="#315CDD"
-                            app:srcCompat="@drawable/ic_arrow_back"
-                            />
-
-                        <ImageButton
-                            android:id="@+id/deleteIcon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/actionBarItemBackground"
-                            android:contentDescription="@string/navigate_back_icon_content_desc"
-                            android:padding="@dimen/dimen_16dp"
-                            android:tint="#315CDD"
-                            app:srcCompat="@drawable/ic_delete"
-                            />
-
-                        <TextView
-                            android:id="@+id/selectedCount"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.1"
-                            android:gravity="start"
-                            android:padding="8dp"
-                            android:text="3"
-                            android:textColor="#315CDD"
-                            android:textSize="18sp"
-                            />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:background="@android:color/white"
-                        android:backgroundTint="@color/material_on_surface_stroke"
-                        />
                 </LinearLayout>
 
 

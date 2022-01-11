@@ -118,7 +118,7 @@ object NoteStore {
         )
     )
 
-    var _notes: MutableLiveData<List<NoteInfo>> = MutableLiveData()
+    private var _notes: MutableLiveData<List<NoteInfo>> = MutableLiveData()
 
     init {
         _notes.value = allNotes
